@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Local Cloud Platform</title>
+</head>
+<body>
+  <header class="topbar">
+    <h1>Local Cloud Platform</h1>
+    <div>
+      <span id="who"></span><span id="role" class="badge"></span>
+      <button id="logout">Log out</button>
+    </div>
+  </header>
+  <main>
+    <section id="create-section" hidden>
+      <h2>Provision a service</h2>
+      <div class="row">
+        <input id="svc-name" placeholder="Service name (e.g. web-01)" />
+        <select id="svc-image">
+          <option value="nginx:alpine">Web server (nginx)</option>
+          <option value="redis:alpine">Cache (Redis)</option>
+          <option value="postgres:16">Database (PostgreSQL)</option>
+        </select>
+        <button id="create-btn">Create</button>
+      </div>
+      <p id="msg"></p>
+    </section>
+    <section>
+      <h2>My services</h2>
+      <table>
+        <thead><tr><th>Name</th><th>Image</th><th>Status</th>
+          <th>Storage location</th><th>Created</th><th></th></tr></thead>
+        <tbody id="svc-body"></tbody>
+      </table>
+    </section>
+    <section id="audit-section" hidden>
+      <h2>Audit log</h2>
+      <table>
+        <thead><tr><th>Time</th><th>User</th><th>Action</th><th>Resource</th></tr></thead>
+        <tbody id="audit-body"></tbody>
+      </table>
+    </section>
+  </main>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
