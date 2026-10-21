@@ -22,6 +22,7 @@ class Service(Base):
     name: Mapped[str] = mapped_column(String)
     image: Mapped[str] = mapped_column(String)
     container_id: Mapped[str | None] = mapped_column(String, nullable=True)
+    port: Mapped[int | None] = mapped_column(nullable=True)
     status: Mapped[str] = mapped_column(String, default="provisioning")
     storage_location: Mapped[str] = mapped_column(
         String, default="Botswana (local server)")
