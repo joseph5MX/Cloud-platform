@@ -1,8 +1,8 @@
 export const CONFIG = {
-  KEYCLOAK_URL: "http://SERVER-IP:8080",
+  KEYCLOAK_URL: "http://100.67.62.113:8080",
   REALM: "Cloudplatform",
   CLIENT_ID: "cloud-frontend",
-  API_URL: "http://SERVER-IP:8000", // backend address (used when USE_MOCK is false)
-  USE_MOCK: true,                   // true = fake data, no backend needed
+  API_URL: "http://100.67.62.113:8000", // backend address (used when USE_MOCK is false)
+  USE_MOCK: false,                   // true = fake data, no backend needed
   POLL_MS: 5000,                    // how often the table refreshes
 };
