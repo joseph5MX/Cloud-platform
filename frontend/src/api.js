@@ -89,8 +89,3 @@ export async function listAudit() {
   }
   return call("/audit");
 }
-
-export async function listAudit() {
-  if (CONFIG.USE_MOCK) { await wait(150); return structuredClone(mockAudit); }
-  return call("/audit");
-}
