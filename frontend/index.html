@@ -13,28 +13,34 @@
       <button id="logout">Log out</button>
     </div>
   </header>
+
   <main>
+    <p id="msg"></p>
+
     <section id="create-section" hidden>
       <h2>Provision a service</h2>
       <div class="row">
         <input id="svc-name" placeholder="Service name (e.g. web-01)" />
+        <select id="svc-owner">
+          <option value="">Myself (admin)</option>
+        </select>
         <select id="svc-image">
           <option value="nginx:alpine">Web server (nginx)</option>
-          <option value="redis:alpine">Cache (Redis)</option>
-          <option value="postgres:16">Database (PostgreSQL)</option>
+          <option value="httpd:alpine">Web server (Apache)</option>
         </select>
         <button id="create-btn">Create</button>
       </div>
-      <p id="msg"></p>
     </section>
+
     <section>
-      <h2>My services</h2>
+      <h2 id="svc-title">My services</h2>
       <table>
-        <thead><tr><th>Name</th><th>Image</th><th>Status</th>
-          <th>Storage location</th><th>Created</th><th></th></tr></thead>
+        <thead><tr><th>Name</th><th>Owner</th><th>Image</th><th>Status</th>
+          <th>Storage location</th><th>Created</th><th>Access</th><th></th></tr></thead>
         <tbody id="svc-body"></tbody>
       </table>
     </section>
+
     <section id="audit-section" hidden>
       <h2>Audit log</h2>
       <table>
@@ -43,6 +49,7 @@
       </table>
     </section>
   </main>
+
   <script type="module" src="/src/main.js"></script>
 </body>
 </html>
